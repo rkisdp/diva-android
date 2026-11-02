@@ -32,6 +32,11 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         run: |
           echo "RISK_THRESHOLD=${{ github.event.inputs.riskThreshold }}" >> $GITHUB_ENV
+      - name: Install 32-bit libraries for build-tools 23.0.2 (aapt is 32-bit)
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libc6:i386 libstdc++6:i386 zlib1g:i386
       - name: Install required Android SDK packages
         run: |
           SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
@@ -47,7 +52,8 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build the app
-        run: ./gradlew assembleDebug
+        timeout-minutes: 15
+        run: ./gradlew assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
           name: diva.apk
