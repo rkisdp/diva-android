@@ -45,6 +45,7 @@ public class AccessControl2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_control2);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void viewAPICredentials(View view) {

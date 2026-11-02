@@ -42,6 +42,7 @@ public class HardcodeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardcode);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void access(View view) {

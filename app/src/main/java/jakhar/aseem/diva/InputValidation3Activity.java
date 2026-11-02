@@ -45,6 +45,7 @@ public class InputValidation3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_validation3);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
 
         djni = new DivaJni();
     }

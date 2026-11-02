@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# Preserve native method bindings
+-keepclasseswithmembernames class * {
+    native <methods>;
+}

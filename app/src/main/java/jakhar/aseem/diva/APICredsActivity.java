@@ -35,7 +35,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class APICredsActivity extends AppCompatActivity {
+public class APICredsActivity extends SecureBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

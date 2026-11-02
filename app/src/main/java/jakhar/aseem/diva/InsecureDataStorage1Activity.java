@@ -39,12 +39,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class InsecureDataStorage1Activity extends AppCompatActivity {
+public class InsecureDataStorage1Activity extends SecureBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insecure_data_storage1);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void saveCredentials(View view) {

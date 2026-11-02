@@ -49,6 +49,7 @@ public class InsecureDataStorage3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insecure_data_storage3);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void saveCredentials(View view) {

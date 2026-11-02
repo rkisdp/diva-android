@@ -38,12 +38,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LogActivity extends AppCompatActivity {
+public class LogActivity extends SecureBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void checkout(View view) {

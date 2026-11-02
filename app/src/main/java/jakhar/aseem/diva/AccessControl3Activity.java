@@ -48,6 +48,7 @@ public class AccessControl3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_control3);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
 
         SharedPreferences spref = PreferenceManager.getDefaultSharedPreferences(this);
         String pin = spref.getString(getString(R.string.pkey), "");

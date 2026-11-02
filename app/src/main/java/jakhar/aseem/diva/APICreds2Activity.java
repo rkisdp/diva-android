@@ -47,6 +47,7 @@ public class APICreds2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apicreds2);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
         TextView apicview = (TextView) findViewById(R.id.apic2TextView);
         EditText pintext  = (EditText) findViewById(R.id.aci2pinText);
         Button  vbutton   = (Button) findViewById(R.id.aci2button);
