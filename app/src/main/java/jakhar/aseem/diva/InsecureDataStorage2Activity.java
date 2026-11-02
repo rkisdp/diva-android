@@ -58,13 +58,14 @@ public class InsecureDataStorage2Activity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_insecure_data_storage2);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void saveCredentials(View view) {
         EditText usr = (EditText) findViewById(R.id.ids2Usr);
         EditText pwd = (EditText) findViewById(R.id.ids2Pwd);
         try {
-            mDB.execSQL("INSERT INTO myuser VALUES ('"+ usr.getText().toString() +"', '"+ pwd.getText().toString() +"');");
+            mDB.execSQL("INSERT INTO myuser VALUES (?, ?);", new Object[]{usr.getText().toString(), pwd.getText().toString()});
             mDB.close();
         }
         catch(Exception e) {

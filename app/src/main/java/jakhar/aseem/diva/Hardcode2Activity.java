@@ -45,6 +45,7 @@ public class Hardcode2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardcode2);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
 
         djni = new DivaJni();
     }

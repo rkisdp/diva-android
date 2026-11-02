@@ -51,6 +51,7 @@ public class AccessControl3NotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_control3_notes);
+        getWindow().getDecorView().setFilterTouchesWhenObscured(true);
     }
 
     public void accessNotes(View view) {

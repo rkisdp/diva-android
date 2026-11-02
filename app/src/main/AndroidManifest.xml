@@ -7,13 +7,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -60,6 +62,9 @@
         </activity>
         <activity
             android:name=".APICredsActivity"
+            android:taskAffinity=""
+            android:launchMode="singleTask"
+            android:exported="false"
             android:label="@string/apic_label" >
             <intent-filter>
                 <action android:name="jakhar.aseem.diva.action.VIEW_CREDS" />
@@ -73,6 +78,9 @@
         </activity>
         <activity
             android:name=".APICreds2Activity"
+            android:taskAffinity=""
+            android:launchMode="singleTask"
+            android:exported="false"
             android:label="@string/apic2_label" >
             <intent-filter>
                 <action android:name="jakhar.aseem.diva.action.VIEW_CREDS2" />
@@ -85,7 +93,7 @@
             android:name=".NotesProvider"
             android:authorities="jakhar.aseem.diva.provider.notesprovider"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="false" >
         </provider>
 
         <activity
